@@ -12,8 +12,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
+<style>
+    .sidenav {
+      width: 150px;
+      position: fixed;
+      z-index: 1;
+      top: 15px;
+      right: 7px;
+      background: #ffffff;
+      overflow-x: hidden;
+      padding: 8px 0;
+      -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+      box-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #2196F3;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #064579;
+}
+</style>
   </head>
   <body>
+  <div class="sidenav">
+    <a href="/factory">Home</a>
+    <a href="/spare/new">New Spare</a>
+    <a href="/logout">Log Out</a>
+    
+  </div>
     <div class="wrapper">
 
         <%= yield %>

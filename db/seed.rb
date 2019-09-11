@@ -1,22 +1,3 @@
-user = User.create(:name => "ahmed",:email => "aabuauf@yahoo.com", :password => "1234", :super_user => false)
-factory = Factory.create(:name => "MIDOR") 
-user.factory = factory
-user.save
-
-eq = Equipment.create(:tag_no => "01P01", :manufacture => "Flowserve")
-eq.factory = factory
-eq.save
-
-eq1 = Equipment.create(:tag_no => "01P02", :manufacture => "Flowserve")
-eq1.factory = factory
-eq1.save
-
-sp = Spare.create(:code => "1234", :description =>"" , :qty =>"" )
-sp.equipment << eq
-sp.factory = factory
-sp.save
-
-
 factory1 = Factory.create(:name => "factory1")
 factory2 = Factory.create(:name => "factory2")
 
@@ -28,47 +9,12 @@ user1.factory=factory2
 user.save
 user1.save
 
-eq1 = Equipment.create(:tag_no => "01E59", :manufacture => "Flowserve")
-eq2 = Equipment.create(:tag_no => "00DG01", :manufacture => "Flowserve")
-eq3 = Equipment.create(:tag_no => "00DG02", :manufacture => "Flowserve")
-eq4 = Equipment.create(:tag_no => "00DG03", :manufacture => "Flowserve")
-eq5 = Equipment.create(:tag_no => "01H01/F01", :manufacture => "Flowserve")
-eq6 = Equipment.create(:tag_no => "01H01/F02A", :manufacture => "Flowserve")
-eq7 = Equipment.create(:tag_no => "01H01/F02B", :manufacture => "Flowserve")
-eq8 = Equipment.create(:tag_no => "01H01/MF02A", :manufacture => "Flowserve")
-eq9 = Equipment.create(:tag_no => "01H01/MF02B", :manufacture => "Flowserve")
-eq10 = Equipment.create(:tag_no => "01K01/P02A", :manufacture => "Flowserve")
-eq11 = Equipment.create(:tag_no => "01K01/P02B", :manufacture => "Flowserve")
-eq12 = Equipment.create(:tag_no => "01K01A", :manufacture => "Flowserve")
-eq13 = Equipment.create(:tag_no => "01K01A/E01", :manufacture => "Flowserve")
-eq14 = Equipment.create(:tag_no => "01K01A/P01", :manufacture => "Flowserve")
-eq15 = Equipment.create(:tag_no => "01K01B", :manufacture => "Flowserve")
-eq16 = Equipment.create(:tag_no => "01K01B/E01", :manufacture => "Flowserve")
-eq17 = Equipment.create(:tag_no => "01K01B/P01", :manufacture => "Flowserve")
-eq18 = Equipment.create(:tag_no => "01MEF12A", :manufacture => "Flowserve")
-eq19 = Equipment.create(:tag_no => "01MEF12B", :manufacture => "Flowserve")
-eq20 = Equipment.create(:tag_no => "01MEF12C", :manufacture => "Flowserve")
-eq21 = Equipment.create(:tag_no => "01MEF12D", :manufacture => "Flowserve")
-eq22 = Equipment.create(:tag_no => "01MEF12E", :manufacture => "Flowserve")
-eq23 = Equipment.create(:tag_no => "01MEF12F", :manufacture => "Flowserve")
-eq24 = Equipment.create(:tag_no => "01MEF12G", :manufacture => "Flowserve")
-eq25 = Equipment.create(:tag_no => "01MEF12H", :manufacture => "Flowserve")
-eq26 = Equipment.create(:tag_no => "01MEF14A", :manufacture => "Flowserve")
-eq27 = Equipment.create(:tag_no => "01MEF14B", :manufacture => "Flowserve")
-eq28 = Equipment.create(:tag_no => "01MEF20A", :manufacture => "Flowserve")
-eq29 = Equipment.create(:tag_no => "01MEF20B", :manufacture => "Flowserve")
-eq30 = Equipment.create(:tag_no => "01MEF20C", :manufacture => "Flowserve")
-eq31 = Equipment.create(:tag_no => "01MEF54A", :manufacture => "Flowserve")
-eq32 = Equipment.create(:tag_no => "01MEF54B", :manufacture => "Flowserve")
-eq33 = Equipment.create(:tag_no => "01MEF59A", :manufacture => "Flowserve")
-eq34 = Equipment.create(:tag_no => "01MEF59B", :manufacture => "Flowserve")
-eq35 = Equipment.create(:tag_no => "01MEF59C", :manufacture => "Flowserve")
-eq36 = Equipment.create(:tag_no => "01MEF59D", :manufacture => "Flowserve")
-eq37 = Equipment.create(:tag_no => "01MEF59E", :manufacture => "Flowserve")
-eq38 = Equipment.create(:tag_no => "01MEF59F", :manufacture => "Flowserve")
-eq39 = Equipment.create(:tag_no => "01MEF59G", :manufacture => "Flowserve")
-eq40 = Equipment.create(:tag_no => "01MEF59H", :manufacture => "Flowserve")
-eq41 = Equipment.create(:tag_no => "01MP10A", :manufacture => "Flowserve")
+Bom.all.each do|n| 
+    n.qty_installed = rand(10)
+    n.save
+end
+
+
 eq42 = Equipment.create(:tag_no => "01P01A", :manufacture => "Flowserve")
 eq43 = Equipment.create(:tag_no => "01p01a-old", :manufacture => "Flowserve")
 eq44 = Equipment.create(:tag_no => "01P01B", :manufacture => "Flowserve")
@@ -80,145 +26,9 @@ eq49 = Equipment.create(:tag_no => "01P04A", :manufacture => "Flowserve")
 eq50 = Equipment.create(:tag_no => "01P04B", :manufacture => "Flowserve")
 eq51 = Equipment.create(:tag_no => "01P05A", :manufacture => "Flowserve")
 eq52 = Equipment.create(:tag_no => "01P05B", :manufacture => "Flowserve")
-eq53 = Equipment.create(:tag_no => "01P06A", :manufacture => "Flowserve")
-eq54 = Equipment.create(:tag_no => "01P06B", :manufacture => "Flowserve")
-eq55 = Equipment.create(:tag_no => "01P07A", :manufacture => "Flowserve")
-eq56 = Equipment.create(:tag_no => "01P07B", :manufacture => "Flowserve")
-eq57 = Equipment.create(:tag_no => "01P08A", :manufacture => "Flowserve")
-eq58 = Equipment.create(:tag_no => "01P08B", :manufacture => "Flowserve")
-eq59 = Equipment.create(:tag_no => "01P09A", :manufacture => "Flowserve")
-eq60 = Equipment.create(:tag_no => "01P09B", :manufacture => "Flowserve")
-eq61 = Equipment.create(:tag_no => "01P10A", :manufacture => "Flowserve")
-eq62 = Equipment.create(:tag_no => "01P10B", :manufacture => "Flowserve")
-eq63 = Equipment.create(:tag_no => "01P11A", :manufacture => "Flowserve")
-eq64 = Equipment.create(:tag_no => "01P11B", :manufacture => "Flowserve")
-eq65 = Equipment.create(:tag_no => "01P12A", :manufacture => "Flowserve")
-eq66 = Equipment.create(:tag_no => "01P12B", :manufacture => "Flowserve")
-eq67 = Equipment.create(:tag_no => "01P13A", :manufacture => "Flowserve")
-eq68 = Equipment.create(:tag_no => "01P13B", :manufacture => "Flowserve")
-eq69 = Equipment.create(:tag_no => "01P14A", :manufacture => "Flowserve")
-eq70 = Equipment.create(:tag_no => "01P14B", :manufacture => "Flowserve")
-eq71 = Equipment.create(:tag_no => "01P15A", :manufacture => "Flowserve")
-eq72 = Equipment.create(:tag_no => "01P15B", :manufacture => "Flowserve")
-eq73 = Equipment.create(:tag_no => "01P16A", :manufacture => "Flowserve")
-eq74 = Equipment.create(:tag_no => "01P16B", :manufacture => "Flowserve")
-eq75 = Equipment.create(:tag_no => "01P17A", :manufacture => "Flowserve")
-eq76 = Equipment.create(:tag_no => "01P17B", :manufacture => "Flowserve")
-eq77 = Equipment.create(:tag_no => "01P51A", :manufacture => "Flowserve")
-eq78 = Equipment.create(:tag_no => "01P51B", :manufacture => "Flowserve")
-eq79 = Equipment.create(:tag_no => "01P52A", :manufacture => "Flowserve")
-eq80 = Equipment.create(:tag_no => "01P52B", :manufacture => "Flowserve")
-eq81 = Equipment.create(:tag_no => "01P53A", :manufacture => "Flowserve")
-eq82 = Equipment.create(:tag_no => "01P53B", :manufacture => "Flowserve")
-eq83 = Equipment.create(:tag_no => "01P54A", :manufacture => "Flowserve")
-eq84 = Equipment.create(:tag_no => "01P54B", :manufacture => "Flowserve")
-eq85 = Equipment.create(:tag_no => "01P55A", :manufacture => "Flowserve")
-eq86 = Equipment.create(:tag_no => "01P55B", :manufacture => "Flowserve")
-eq87 = Equipment.create(:tag_no => "01P56A", :manufacture => "Flowserve")
-eq88 = Equipment.create(:tag_no => "01P56B", :manufacture => "Flowserve")
-eq89 = Equipment.create(:tag_no => "01P57A", :manufacture => "Flowserve")
-eq90 = Equipment.create(:tag_no => "01P57B", :manufacture => "Flowserve")
-eq91 = Equipment.create(:tag_no => "01P58", :manufacture => "Flowserve")
-eq92 = Equipment.create(:tag_no => "01p60", :manufacture => "Flowserve")
-eq93 = Equipment.create(:tag_no => "01PK01/P01A", :manufacture => "Flowserve")
-eq94 = Equipment.create(:tag_no => "01PK01/P01B", :manufacture => "Flowserve")
-eq95 = Equipment.create(:tag_no => "01PK01/P01C", :manufacture => "Flowserve")
-eq96 = Equipment.create(:tag_no => "01PK02/P01A", :manufacture => "Flowserve")
-eq97 = Equipment.create(:tag_no => "01PK02/P01B", :manufacture => "Flowserve")
-eq98 = Equipment.create(:tag_no => "01PK02/P01C", :manufacture => "Flowserve")
-eq99 = Equipment.create(:tag_no => "01PK02/P01D", :manufacture => "Flowserve")
-eq100 = Equipment.create(:tag_no => "01PK03/P01A", :manufacture => "Flowserve")
-eq101 = Equipment.create(:tag_no => "01PK03/P01B", :manufacture => "Flowserve")
-eq102 = Equipment.create(:tag_no => "01PK04/P01A", :manufacture => "Flowserve")
-eq103 = Equipment.create(:tag_no => "01PK04/P01B", :manufacture => "Flowserve")
-eq104 = Equipment.create(:tag_no => "01PK05/P01A", :manufacture => "Flowserve")
-eq105 = Equipment.create(:tag_no => "01PK05/P01B", :manufacture => "Flowserve")
-eq106 = Equipment.create(:tag_no => "01PK06/P01A", :manufacture => "Flowserve")
-eq107 = Equipment.create(:tag_no => "01PK06/P01B", :manufacture => "Flowserve")
-eq108 = Equipment.create(:tag_no => "01PK07/P01A", :manufacture => "Flowserve")
-eq109 = Equipment.create(:tag_no => "01PK07/P01B", :manufacture => "Flowserve")
-eq110 = Equipment.create(:tag_no => "01PK07/P01C", :manufacture => "Flowserve")
-eq111 = Equipment.create(:tag_no => "01PK08/P01A", :manufacture => "Flowserve")
-eq112 = Equipment.create(:tag_no => "01PK08/P01B", :manufacture => "Flowserve")
-eq113 = Equipment.create(:tag_no => "01STP01A", :manufacture => "Flowserve")
-eq114 = Equipment.create(:tag_no => "01STP01A/P02-old", :manufacture => "Flowserve")
-eq115 = Equipment.create(:tag_no => "01STP01A-OLD", :manufacture => "Flowserve")
-eq116 = Equipment.create(:tag_no => "01STP02B", :manufacture => "Flowserve")
-eq117 = Equipment.create(:tag_no => "01STP10B", :manufacture => "Flowserve")
-eq118 = Equipment.create(:tag_no => "01STP15B", :manufacture => "Flowserve")
-eq119 = Equipment.create(:tag_no => "01STP54A", :manufacture => "Flowserve")
-eq120 = Equipment.create(:tag_no => "01STP56B", :manufacture => "Flowserve")
-eq121 = Equipment.create(:tag_no => "02K01/P02A", :manufacture => "Flowserve")
-eq122 = Equipment.create(:tag_no => "02K01/P02B", :manufacture => "Flowserve")
-eq123 = Equipment.create(:tag_no => "02K01/P03A", :manufacture => "Flowserve")
-eq124 = Equipment.create(:tag_no => "02K01/P03B", :manufacture => "Flowserve")
-eq125 = Equipment.create(:tag_no => "02K01A", :manufacture => "Flowserve")
-eq126 = Equipment.create(:tag_no => "02K01A/E03", :manufacture => "Flowserve")
-eq127 = Equipment.create(:tag_no => "02K01A/P01B", :manufacture => "Flowserve")
-eq128 = Equipment.create(:tag_no => "02K01B", :manufacture => "Flowserve")
-eq129 = Equipment.create(:tag_no => "02K01B/E03", :manufacture => "Flowserve")
-eq130 = Equipment.create(:tag_no => "02K01B/P01B", :manufacture => "Flowserve")
-eq131 = Equipment.create(:tag_no => "02ME02B", :manufacture => "Flowserve")
-eq132 = Equipment.create(:tag_no => "02ME02C", :manufacture => "Flowserve")
-eq133 = Equipment.create(:tag_no => "02ME02D", :manufacture => "Flowserve")
-eq134 = Equipment.create(:tag_no => "02MEF02A", :manufacture => "Flowserve")
-eq135 = Equipment.create(:tag_no => "02MEF02B", :manufacture => "Flowserve")
-eq136 = Equipment.create(:tag_no => "02MEF02C", :manufacture => "Flowserve")
-eq137 = Equipment.create(:tag_no => "02MEF02D", :manufacture => "Flowserve")
-eq138 = Equipment.create(:tag_no => "02MEF05A", :manufacture => "Flowserve")
-eq139 = Equipment.create(:tag_no => "02MEF05B", :manufacture => "Flowserve")
-eq140 = Equipment.create(:tag_no => "02P01A", :manufacture => "Flowserve")
-eq141 = Equipment.create(:tag_no => "02P01A/P01B", :manufacture => "Flowserve")
-eq142 = Equipment.create(:tag_no => "02P01B", :manufacture => "Flowserve")
-eq143 = Equipment.create(:tag_no => "02P01B/P01B", :manufacture => "Flowserve")
-eq144 = Equipment.create(:tag_no => "02P02A", :manufacture => "Flowserve")
-eq145 = Equipment.create(:tag_no => "02P02B", :manufacture => "Flowserve")
-eq146 = Equipment.create(:tag_no => "02P03", :manufacture => "Flowserve")
-eq147 = Equipment.create(:tag_no => "02P04A", :manufacture => "Flowserve")
-eq148 = Equipment.create(:tag_no => "02P04B", :manufacture => "Flowserve")
-eq149 = Equipment.create(:tag_no => "02P05", :manufacture => "Flowserve")
 
-eq1.factory = factory1
-eq2.factory = factory1
-eq3.factory = factory1
-eq4.factory = factory1
-eq5.factory = factory1
-eq6.factory = factory1
-eq7.factory = factory1
-eq8.factory = factory1
-eq9.factory = factory1
-eq10.factory = factory1
-eq11.factory = factory1
-eq12.factory = factory1
-eq13.factory = factory1
-eq14.factory = factory1
-eq15.factory = factory1
-eq16.factory = factory1
-eq17.factory = factory1
-eq18.factory = factory1
-eq19.factory = factory1
-eq20.factory = factory1
-eq21.factory = factory1
-eq22.factory = factory1
-eq23.factory = factory1
-eq24.factory = factory1
-eq25.factory = factory1
-eq26.factory = factory1
-eq27.factory = factory1
-eq28.factory = factory1
-eq29.factory = factory1
-eq30.factory = factory1
-eq31.factory = factory1
-eq32.factory = factory1
-eq33.factory = factory1
-eq34.factory = factory1
-eq35.factory = factory1
-eq36.factory = factory1
-eq37.factory = factory1
-eq38.factory = factory1
-eq39.factory = factory1
-eq40.factory = factory1
-eq41.factory = factory1
+
+
 eq42.factory = factory1
 eq43.factory = factory1
 eq44.factory = factory1
@@ -230,145 +40,8 @@ eq49.factory = factory1
 eq50.factory = factory1
 eq51.factory = factory1
 eq52.factory = factory1
-eq53.factory = factory1
-eq54.factory = factory1
-eq55.factory = factory1
-eq56.factory = factory1
-eq57.factory = factory1
-eq58.factory = factory1
-eq59.factory = factory1
-eq60.factory = factory1
-eq61.factory = factory1
-eq62.factory = factory1
-eq63.factory = factory1
-eq64.factory = factory1
-eq65.factory = factory1
-eq66.factory = factory1
-eq67.factory = factory1
-eq68.factory = factory1
-eq69.factory = factory1
-eq70.factory = factory1
-eq71.factory = factory1
-eq72.factory = factory1
-eq73.factory = factory1
-eq74.factory = factory1
-eq75.factory = factory1
-eq76.factory = factory1
-eq77.factory = factory1
-eq78.factory = factory1
-eq79.factory = factory1
-eq80.factory = factory1
-eq81.factory = factory1
-eq82.factory = factory1
-eq83.factory = factory1
-eq84.factory = factory1
-eq85.factory = factory1
-eq86.factory = factory1
-eq87.factory = factory1
-eq88.factory = factory1
-eq89.factory = factory1
-eq90.factory = factory1
-eq91.factory = factory1
-eq92.factory = factory1
-eq93.factory = factory1
-eq94.factory = factory1
-eq95.factory = factory1
-eq96.factory = factory1
-eq97.factory = factory1
-eq98.factory = factory1
-eq99.factory = factory1
-eq100.factory = factory1
-eq101.factory = factory1
-eq102.factory = factory1
-eq103.factory = factory1
-eq104.factory = factory1
-eq105.factory = factory1
-eq106.factory = factory1
-eq107.factory = factory1
-eq108.factory = factory1
-eq109.factory = factory1
-eq110.factory = factory1
-eq111.factory = factory1
-eq112.factory = factory1
-eq113.factory = factory1
-eq114.factory = factory1
-eq115.factory = factory1
-eq116.factory = factory1
-eq117.factory = factory1
-eq118.factory = factory1
-eq119.factory = factory1
-eq120.factory = factory1
-eq121.factory = factory2
-eq122.factory = factory2
-eq123.factory = factory2
-eq124.factory = factory2
-eq125.factory = factory2
-eq126.factory = factory2
-eq127.factory = factory2
-eq128.factory = factory2
-eq129.factory = factory2
-eq130.factory = factory2
-eq131.factory = factory2
-eq132.factory = factory2
-eq133.factory = factory2
-eq134.factory = factory2
-eq135.factory = factory2
-eq136.factory = factory2
-eq137.factory = factory2
-eq138.factory = factory2
-eq139.factory = factory2
-eq140.factory = factory2
-eq141.factory = factory2
-eq142.factory = factory2
-eq143.factory = factory2
-eq144.factory = factory2
-eq145.factory = factory2
-eq146.factory = factory2
-eq147.factory = factory2
-eq148.factory = factory2
-eq149.factory = factory2
 
-eq1.save
-eq2.save
-eq3.save
-eq4.save
-eq5.save
-eq6.save
-eq7.save
-eq8.save
-eq9.save
-eq10.save
-eq11.save
-eq12.save
-eq13.save
-eq14.save
-eq15.save
-eq16.save
-eq17.save
-eq18.save
-eq19.save
-eq20.save
-eq21.save
-eq22.save
-eq23.save
-eq24.save
-eq25.save
-eq26.save
-eq27.save
-eq28.save
-eq29.save
-eq30.save
-eq31.save
-eq32.save
-eq33.save
-eq34.save
-eq35.save
-eq36.save
-eq37.save
-eq38.save
-eq39.save
-eq40.save
-eq41.save
+
 eq42.save
 eq43.save
 eq44.save
@@ -380,103 +53,7 @@ eq49.save
 eq50.save
 eq51.save
 eq52.save
-eq53.save
-eq54.save
-eq55.save
-eq56.save
-eq57.save
-eq58.save
-eq59.save
-eq60.save
-eq61.save
-eq62.save
-eq63.save
-eq64.save
-eq65.save
-eq66.save
-eq67.save
-eq68.save
-eq69.save
-eq70.save
-eq71.save
-eq72.save
-eq73.save
-eq74.save
-eq75.save
-eq76.save
-eq77.save
-eq78.save
-eq79.save
-eq80.save
-eq81.save
-eq82.save
-eq83.save
-eq84.save
-eq85.save
-eq86.save
-eq87.save
-eq88.save
-eq89.save
-eq90.save
-eq91.save
-eq92.save
-eq93.save
-eq94.save
-eq95.save
-eq96.save
-eq97.save
-eq98.save
-eq99.save
-eq100.save
-eq101.save
-eq102.save
-eq103.save
-eq104.save
-eq105.save
-eq106.save
-eq107.save
-eq108.save
-eq109.save
-eq110.save
-eq111.save
-eq112.save
-eq113.save
-eq114.save
-eq115.save
-eq116.save
-eq117.save
-eq118.save
-eq119.save
-eq120.save
-eq121.save
-eq122.save
-eq123.save
-eq124.save
-eq125.save
-eq126.save
-eq127.save
-eq128.save
-eq129.save
-eq130.save
-eq131.save
-eq132.save
-eq133.save
-eq134.save
-eq135.save
-eq136.save
-eq137.save
-eq138.save
-eq139.save
-eq140.save
-eq141.save
-eq142.save
-eq143.save
-eq144.save
-eq145.save
-eq146.save
-eq147.save
-eq148.save
-eq149.save
+
 
 sp1 = Spare.create(:code => "58-01-34-715-9", :description =>"BEARING 22315 E C3" , :qty =>"71" )
 sp2 = Spare.create(:code => "31-95-73-110-3", :description =>"BEARING LOCK NUT (KM-24)" , :qty =>"7" )
@@ -2300,7 +1877,26 @@ sp1819 = Spare.create(:code => "27-50-20-018-3", :description =>"GASKET FOR VALV
 sp1820 = Spare.create(:code => "27-50-20-060-3", :description =>"PACKING 125 X 70 (SET = 8 PCS) (SIZE 10 MM)" , :qty =>"11" )
 sp1821 = Spare.create(:code => "27-50-25-014-3", :description =>"LIP SEAL (SIZE 45 X 55 X 8)" , :qty =>"6" )
 sp1822 = Spare.create(:code => "83-95-24-001-9", :description =>"CHARGING KIT FOR ACCUMULATOR" , :qty =>"86" )
+i=1
+while i<5 do
+    sp = Spare.find_by_id(i)
+    sp.factory = Factory.find_by_id(1)
+    sp.save
+    i=+1
+end
 
+i=1200
+while i<1737 do
+    sp = Spare.find_by_id(i)
+    sp.factory = Factory.find_by_id(2)
+    sp.save
+    i=i+1
+end
+
+Spare.all.each do |sp|
+    sp.factory = Factory.find_by_id(1)
+    sp.save
+end
 sp1.factory = factory1
 sp2.factory = factory1
 sp3.factory = factory1

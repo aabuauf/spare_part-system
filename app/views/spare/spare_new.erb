@@ -1,0 +1,20 @@
+<h1>Create New Spare</h1>
+
+<form action="/spare/new" method="POST">
+  <label for="code">Code</label><br>
+  <input type="text" name="code" required><br>
+  <label for="description">Description</label><br>
+  <input type="text" name="description"  required><br>
+  <label for="manufacture">Manufacture</label><br>
+  <input type="text" name="manufacture"><br>
+  <label for="partno">Part No</label><br>
+  <input type="text" name="partno"><br>
+  <label for="qty">Stock Qty</label><br>
+  <input type="text" name="qty"><br>
+  <br>
+  <input type="submit" value="Create"><br>
+  <br>
+  <% @eq.each do |eacheq| %>
+    <input id="<%= eacheq.tag_no %>" type="checkbox" name="eq[]" value="<%= eacheq.id %>"><%= eacheq.tag_no %><br>
+  <% end %>
+ </form>

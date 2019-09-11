@@ -1,0 +1,17 @@
+
+
+<% if @msg %>
+        <h1><%= @msg%></h1>
+    <% else%>
+        <h1>Welcome, <%= @user.name %></h1><br>
+<% end %>
+<br>
+<h2>Your factory is <%= @factory.name %> </h2><br>
+<br>
+
+<% @equipment.each do |eachEq|%>
+    <a href="/equipment/<%= eachEq.id %>"><%= eachEq.tag_no%></a><br>
+
+<% end %>
+
+
