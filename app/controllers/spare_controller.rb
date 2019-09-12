@@ -32,7 +32,7 @@ class SpareController < ApplicationController
     end
 
     get '/spare/:id' do
-       
+        # session[:flash][:delete]="Are you sure?"
         if Helpers.is_logged_in?(session)
             if session[:msg]!= "" 
                 @msg = session[:msg]
@@ -89,7 +89,12 @@ class SpareController < ApplicationController
         end  
     end
     get '/spare/:id/delete' do
+
         if Helpers.is_logged_in?(session)
+            # if session[:flash][:delete]
+            #     # The flash collection is cleared after any request that uses it
+            #     "#{session[:flash][:delete]}"
+            #   end
             @spare = Spare.find_by_id(params[:id])
             @user = Helpers.current_user(session)
             if @spare.factory == @user.factory then

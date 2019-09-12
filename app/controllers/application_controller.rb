@@ -1,4 +1,6 @@
 require './config/environment'
+require './lib/sinatra/flash'
+
 
 class ApplicationController < Sinatra::Base
 
@@ -8,6 +10,7 @@ class ApplicationController < Sinatra::Base
     set :method_override, true
     enable :sessions
     set :session_secret, "password_security"
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -16,7 +19,6 @@ class ApplicationController < Sinatra::Base
     else
       redirect '/login'
     end
-    # erb :welcome
   end
 
 

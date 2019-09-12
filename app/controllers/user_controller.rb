@@ -65,7 +65,5 @@ class UserController < ApplicationController
         redirect "/signup"
     end
 
-    # post "/cancel" do
-    #     redirect "/"
-    # end
+
 end
